@@ -1,0 +1,20 @@
+{
+  "name": "socket-io",
+  "version": "1.0.0",
+  "description": "Backend for Socket IO tutorial.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raghav Vasdeva",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.20.0",
+    "socket.io": "^4.7.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
