@@ -18,6 +18,7 @@ app.get('/',(req,res)=>{
 })
 
 io.on('connection', (socket)=>{
+    console.log(socket.id);
     console.log("User Connected");
 
     socket.on('chat message', (msg)=>{

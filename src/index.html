@@ -18,10 +18,9 @@
     <script>
         window.onload=function(){
             var socket = io();
-
             var form=document.getElementById("form");
             var input=document.getElementById("input");
-            console.log(window.location);
+            
             form.addEventListener('submit', function(e){
                 e.preventDefault();
                 if(input.value){
@@ -29,12 +28,18 @@
                     input.value=''
                 }
             })
-
+            socket.on('connect',()=>{
+                console.log(socket.id);
+                console.log(socket.connected);
+            })
             socket.on('chat message', function(msg) {
                 var item = document.createElement('li');
                 item.textContent = msg;
                 document.getElementById("messages").appendChild(item);
             });
+            socket.on('disconnect',()=>{
+                console.log(socket.connected);
+            })
         }
       
     </script>
